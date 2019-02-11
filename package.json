@@ -1,0 +1,26 @@
+{
+  "name": "weather-card",
+  "version": "1.0.0",
+  "description": "This is a simple Weather Card App, here you can find the weather in eny city in the world.",
+  "main": "index.js",
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jorgehossa/weather-card.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jorgehossa/weather-card/issues"
+  },
+  "homepage": "https://github.com/jorgehossa/weather-card#readme",
+  "dependencies": {
+    "css-loader": "^2.1.0",
+    "html-webpack-plugin": "^3.2.0",
+    "style-loader": "^0.23.1",
+    "webpack": "^4.29.3",
+    "webpack-cli": "^3.2.3",
+    "webpack-dev-server": "^3.1.14"
+  }
+}
