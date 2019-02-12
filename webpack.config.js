@@ -9,13 +9,21 @@ module.exports = {
     filename: 'bundle.js'
   },
   devServer: {
+    contentBase: path.join(__dirname, 'dist'),
+    hot: true,
+    open: 'Google Chrome',
     port: 3000
   },
   module: {
     rules: [
       {
         test: /\.scss$/,
-        use: ['style-loader', 'css-loader', 'sass-loader']
+        use: [
+            MiniCssExtractPlugin.loader,
+            // "style-loader", // style nodes from js strings
+            "css-loader",
+            "sass-loader"
+        ]
       }
     ]
   },
