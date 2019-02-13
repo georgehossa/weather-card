@@ -1,38 +1,58 @@
-const path = require('path');
-const HTMLWebpackPlugin = require('html-webpack-plugin');
+const HtmlWebPackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
-
 module.exports = {
-  entry: './src/app/index.js',
-  output: {
-    path: path.join(__dirname, 'dist'),
-    filename: 'bundle.js'
-  },
-  devServer: {
-    contentBase: path.join(__dirname, 'dist'),
-    hot: true,
-    open: 'Google Chrome',
-    port: 3000
-  },
   module: {
     rules: [
       {
+        test: /\.html$/,
+        use: [{ loader: "html-loader", options: { minimize: true } }]
+      },
+      {
+        test: /\.(png|jpg|gif)$/,
+        use: [
+          {
+            loader: "url-loader",
+            options: {
+              name: "./img/[name].[ext]",
+              limit: 10000
+            }
+          },
+          {
+            loader: "img-loader"
+          }
+        ]
+      },
+      {
+        test: /\.(svg)$/,
+        exclude: /fonts/, /* dont want svg fonts from fonts folder to be included */
+        use: [
+          {
+            loader: 'svg-url-loader',
+            options: {
+              noquotes: true,
+            },
+          },
+        ],
+      },
+      {
         test: /\.scss$/,
         use: [
-            MiniCssExtractPlugin.loader,
-            // "style-loader", // style nodes from js strings
-            "css-loader",
-            "sass-loader"
+          MiniCssExtractPlugin.loader,
+          "css-loader",
+          "postcss-loader",
+          "sass-loader"
         ]
       }
     ]
   },
   plugins: [
-    new HTMLWebpackPlugin({
-      template: './src/index.html'
+    new HtmlWebPackPlugin({
+      template: "src/index.html",
+      filename: "./index.html"
     }),
     new MiniCssExtractPlugin({
-      filename: '[name].css'
+      filename: "[name].css",
+      chunkFilename: "[id].css"
     })
   ]
 };
