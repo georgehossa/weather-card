@@ -1,26 +1,57 @@
+*{
+  font-family: $font__default;
+  font-size: 16px;
+}
 body{
   margin: 0;
   padding: 0;
 }
 .main{
-  display: flex;
-  background-color: $color__backgound;
-  justify-content: center;
   align-items: center;
+  background-color: $color__dark;
+  display: flex;
   height: 100vh;
+  justify-content: center;
+}
+input::-webkit-input-placeholder {
+  color: $color__secondary;
+  opacity: .3;
 }
 .form{
   display: flex;
   flex-direction: column;
+  &__button{
+    cursor: pointer;
+    display: block;
+    border:0;
+    text-transform: uppercase;
+    box-shadow: darken($color__dark, 3%) 0 2px 6px;
+    margin: 1rem 0;
+    padding: .5rem;
+    background: $color__primary;
+    color: lighten($color__secondary, 5%);
+    font-size: 1rem;
+    font-weight: $font__bold;
+  }
   &__input{
+    background-color: transparent;
+    border: 0;
+    border-bottom-style:solid;
+    border-bottom-width:1px;
+    border-bottom-color: darken($color__dark--50, 50%);
+    color: $color__secondary;
+    font-size: 1rem;
     margin: .2rem 0;
+    outline: 0;
+    padding: .5rem;
   }
 }
 .card{
+  background-color: $color__white;
   border-radius: 10px;
   box-shadow: $shadow;
-  width: 300px;
   height: 500px;
   margin: 0 0 0 1rem;
-  background-color: $color__white;
+  width: 300px;
+  display: grid;
 }

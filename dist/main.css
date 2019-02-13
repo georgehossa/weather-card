@@ -3,21 +3,33 @@ body {
   padding: 0; }
 
 .main {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   background-color: #cccccc;
-  justify-content: center;
-  align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   height: 100vh; }
 
 .form {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column; }
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column; }
   .form__input {
     margin: .2rem 0; }
 
 .card {
   border-radius: 10px;
-  box-shadow: rgba(0, 0, 0, 0.3) 3px 3px 16px;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.3) 3px 3px 16px;
+          box-shadow: rgba(0, 0, 0, 0.3) 3px 3px 16px;
   width: 300px;
   height: 500px;
   margin: 0 0 0 1rem;

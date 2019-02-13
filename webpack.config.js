@@ -8,6 +8,13 @@ module.exports = {
         use: [{ loader: "html-loader", options: { minimize: true } }]
       },
       {
+        test: /\.js$/,
+        exclude: /node_modules/,
+        use: {
+          loader: "babel-loader"
+        }
+      },
+      {
         test: /\.(png|jpg|gif)$/,
         use: [
           {

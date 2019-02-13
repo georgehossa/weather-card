@@ -1,6 +1,20 @@
+@import url('https://fonts.googleapis.com/css?family=IBM+Plex+Sans:200,300,400,500');
 // COLORS
-$color__white: #ffffff;
-$color__backgound: #cccccc;
+$color__white: hsl(0, 0%, 100%);
+$color__black: hsl(0, 0%, 13%);
+$color__light: hsl(32, 22%, 88%);
+$color__light--50: hsla(32, 22%, 88%, 0.5);
+$color__primary: hsl(20, 88%, 54%);
+$color__secondary: hsl(35, 94%, 67%);
+$color__dark: hsl(220, 58%, 25%);
+$color__dark--50: hsla(220, 59%, 25%, 0.5);
 
-//Shadows
-$shadow: rgba(0,0,0,.3) 3px 3px 16px;
+// SHADOWS
+$shadow: hsla(0, 0%, 0%, 0.3) 3px 3px 16px;
+
+// FONTS
+$font__default: 'IBM Plex Sans', sans-serif;
+$font__light: 200;
+$font__regular: 300;
+$font__medium: 400;
+$font__bold: 500;
