@@ -1,6 +1,12 @@
+const path = require('path');
 const HtmlWebPackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 module.exports = {
+  entry: './src/index.js',
+  output:{
+    path: path.resolve(__dirname, 'dist'),
+    filename: 'js/bundle.js'
+  },
   module: {
     rules: [
       {
@@ -20,7 +26,7 @@ module.exports = {
           {
             loader: "url-loader",
             options: {
-              name: "./img/[name].[ext]",
+              name: './img/[name].[ext]',
               limit: 10000
             }
           },
@@ -30,13 +36,14 @@ module.exports = {
         ]
       },
       {
-        test: /\.(svg)$/,
-        exclude: /fonts/, /* dont want svg fonts from fonts folder to be included */
+        test: /\.svg$/,
+        exclude: /fonts/,
         use: [
           {
-            loader: 'svg-url-loader',
+            loader: 'file-loader',
             options: {
-              noquotes: true,
+              outputPath: 'img',
+              name: '[name].[ext]'
             },
           },
         ],
@@ -58,7 +65,7 @@ module.exports = {
       filename: "./index.html"
     }),
     new MiniCssExtractPlugin({
-      filename: "[name].css",
+      filename: "./css/[name].css",
       chunkFilename: "[id].css"
     })
   ]
