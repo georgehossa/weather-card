@@ -1,0 +1,3 @@
+@mixin respondTo($media) {
+  @media screen and (max-width: $media){@content}
+}

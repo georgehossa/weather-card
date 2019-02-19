@@ -2,17 +2,24 @@
   font-family: $font__default;
   font-size: 16px;
   box-sizing: border-box;
+  transition: .3s ease-in-out;
 }
 body{
+  background-color: $color__dark;
   margin: 0;
   padding: 0;
 }
 .main{
   align-items: center;
-  background-color: $color__dark;
   display: flex;
   height: 100vh;
   justify-content: center;
+  @include respondTo($break-medium){
+    flex-direction: column;
+    flex-wrap: wrap;
+    height: auto;
+    padding: 1rem 0;
+  }
 }
 input::-webkit-input-placeholder {
   color: $color__secondary;
@@ -56,4 +63,8 @@ input::-webkit-input-placeholder {
   margin: 0 0 0 1rem;
   padding: 1rem;
   width: 300px;
+  @include respondTo($break-medium){
+    margin:0;
+    height: auto;
+  }
 }
