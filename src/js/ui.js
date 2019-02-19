@@ -6,7 +6,7 @@ export class UI {
   }
 
   render(weather) {
-    this.temp.textContent = weather.main.temp + ' ºC';
+    this.temp.textContent = parseInt(weather.main.temp) + ' ºC';
     this.city.textContent = weather.name;
     this.desc.textContent = weather.weather[0]['description'];
   }
