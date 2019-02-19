@@ -15,14 +15,24 @@ async function fetchWeather() {
   ui.render(data);
 }
 
-document.querySelector('.form__button').addEventListener('click', (e) => {
-  const city = document.querySelector('.input__city').value;
-  const countryCode = document.querySelector('.input__country').value;
+const changeWeather = function (e) {
+  const city = ui.inputCity.value;
+  const countryCode = ui.inputCountry.value;
   weather.changeLocation(city, countryCode);
   store.setLocationData(city, countryCode);
   fetchWeather();
   e.preventDefault();
-
+}
+ui.button.addEventListener('click', changeWeather)
+ui.inputCountry.addEventListener('keyup', (e) => {
+  if(e.keyCode === 13){
+    changeWeather();
+  }
+})
+ui.inputCity.addEventListener('keyup', (e) => {
+  if(e.keyCode === 13){
+    changeWeather();
+  }
 })
 
 document.addEventListener('DOMContentLoaded', fetchWeather)

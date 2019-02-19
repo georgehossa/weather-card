@@ -3,6 +3,9 @@ export class UI {
     this.temp = document.querySelector('.data__temp')
     this.desc = document.querySelector('.data__description')
     this.city = document.querySelector('.data__city')
+    this.button = document.querySelector('.form__button')
+    this.inputCity = document.querySelector('.input__city')
+    this.inputCountry = document.querySelector('.input__country')
   }
 
   render(weather) {
