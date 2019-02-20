@@ -6,6 +6,7 @@ export class UI {
     this.button = document.querySelector('.form__button')
     this.inputCity = document.querySelector('.input__city')
     this.inputCountry = document.querySelector('.input__country')
+    this.image = document.querySelector('.card__image')
   }
 
   render(weather) {
@@ -13,4 +14,11 @@ export class UI {
     this.city.textContent = weather.name;
     this.desc.textContent = weather.weather[0]['description'];
   }
+  renderImage(weather){
+    if(this.image = weather.weather[0]['main'] === 'Rain'){
+      console.log('Is Rain')
+    }
+
+  }
+
 }

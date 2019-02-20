@@ -13,25 +13,29 @@ const ui = new UI();
 async function fetchWeather() {
   const data = await weather.getWeather();
   ui.render(data);
+  console.log(data)
+  ui.renderImage(data);
 }
-
+// Take input values
 const changeWeather = function (e) {
   const city = ui.inputCity.value;
   const countryCode = ui.inputCountry.value;
   weather.changeLocation(city, countryCode);
   store.setLocationData(city, countryCode);
   fetchWeather();
-  e.preventDefault();
 }
+// Listen button events
 ui.button.addEventListener('click', changeWeather)
 ui.inputCountry.addEventListener('keyup', (e) => {
   if(e.keyCode === 13){
     changeWeather();
+    e.preventDefault();
   }
 })
 ui.inputCity.addEventListener('keyup', (e) => {
   if(e.keyCode === 13){
     changeWeather();
+    e.preventDefault();
   }
 })
 
