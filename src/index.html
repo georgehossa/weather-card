@@ -1,28 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Weather Card App</title>
-</head>
-<body>
-  <main class="main">
-    <div class="form">
-      <h1 class="form__title">Hello!</h1>
-      <p class="form__description">Please fill with <strong>city</strong> name and <strong>country</strong> code to check the weather.<br> <span>You can find your <a href="https://countrycode.org" target="_blank">contry code here</a></span></p>
-      <input type="text" class="form__input input__city" placeholder="City" autofocus>
-      <input type="text" class="form__input input__country" placeholder="Country">
-      <button type="submit" class="form__button">Search</button>
-    </div>
-    <div class="card">
-      <div class="card__image"></div>
-      <div class="card__data">
-        <h1 class="data__temp"></h1>
-        <p class="data__description"></p>
-        <p class="data__city"></p>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Weather Card App</title>
+  </head>
+  <body>
+    <main class="main">
+      <div class="form">
+        <h1 class="form__title">Hello!</h1>
+        <p class="form__description">
+          Please fill with <strong>city</strong> name and
+          <strong>country</strong> code to check the weather.<br />
+          <span
+            >You can find your
+            <a href="https://countrycode.org" target="_blank"
+              >contry code here</a
+            ></span
+          >
+        </p>
+        <input
+          type="text"
+          class="form__input input__city"
+          placeholder="City"
+          autofocus
+        />
+        <input
+          type="text"
+          class="form__input input__country"
+          placeholder="Country"
+        />
+        <button type="submit" class="form__button">Search</button>
       </div>
-    </div>
-  </main>
-</body>
+      <div class="card">
+        <div class="card__image-container">
+          <img class="card__image" src="" alt="" />
+        </div>
+        <div class="card__data">
+          <h1 class="data__temp"></h1>
+          <p class="data__description"></p>
+          <p class="data__city"></p>
+        </div>
+      </div>
+    </main>
+  </body>
 </html>

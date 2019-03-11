@@ -1,11 +1,12 @@
-const path = require('path');
+const path = require("path");
 const HtmlWebPackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const CopyPlugin = require("copy-webpack-plugin");
 module.exports = {
-  entry: './src/index.js',
-  output:{
-    path: path.resolve(__dirname, 'dist'),
-    filename: 'js/bundle.js'
+  entry: "./src/index.js",
+  output: {
+    path: path.resolve(__dirname, "dist"),
+    filename: "js/bundle.js"
   },
   module: {
     rules: [
@@ -26,7 +27,7 @@ module.exports = {
           {
             loader: "url-loader",
             options: {
-              name: './img/[name].[ext]',
+              name: "./img/[name].[ext]",
               limit: 10000
             }
           },
@@ -40,13 +41,13 @@ module.exports = {
         exclude: /fonts/,
         use: [
           {
-            loader: 'file-loader',
+            loader: "file-loader",
             options: {
-              outputPath: 'img',
-              name: '[name].[ext]'
-            },
-          },
-        ],
+              outputPath: "img",
+              name: "[name].[ext]"
+            }
+          }
+        ]
       },
       {
         test: /\.scss$/,
@@ -67,6 +68,12 @@ module.exports = {
     new MiniCssExtractPlugin({
       filename: "./css/[name].css",
       chunkFilename: "[id].css"
-    })
+    }),
+    new CopyPlugin([
+      {
+        from: "./src/img",
+        to: "img"
+      }
+    ])
   ]
 };

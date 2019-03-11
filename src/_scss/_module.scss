@@ -1,16 +1,16 @@
 // MODULES
 
 //FORM
-.form{
+.form {
   max-width: 300px;
-  &__title{
+  &__title {
     color: $color__light;
     font-size: 2rem;
     margin: 0;
     padding: 0;
   }
-  &__description{
-    color:$color__light;
+  &__description {
+    color: $color__light;
     strong {
       color: $color__secondary;
     }
@@ -19,31 +19,38 @@
       text-decoration: none;
       font-size: inherit;
     }
-    a:hover{
+    a:hover {
       text-decoration: underline;
     }
     span {
-      font-size: .8rem;
+      font-size: 0.8rem;
       font-weight: $font__light;
     }
   }
 }
 
 //CARD
-.data{
-  &__temp{
+.card {
+  box-sizing: border-box;
+  &__image {
+    max-width: 100%;
+    width: 100%;
+  }
+}
+.data {
+  &__temp {
     font-size: 3rem;
     font-weight: $font__medium;
-    margin:0;
+    margin: 0;
   }
-  &__description{
+  &__description {
     text-transform: capitalize;
     font-size: 2rem;
     font-weight: $font__light;
     margin: 0;
     border-bottom: 1px solid $color__dark--50;
   }
-  &__city{
+  &__city {
     font-weight: $font__light;
     letter-spacing: 1.5px;
   }
