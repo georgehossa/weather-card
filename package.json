@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "start": "webpack-dev-server --open --mode development",
-    "build": "webpack -p --mode production"
+    "build": "webpack -p --mode production",
+    "test": "snyk test"
   },
   "repository": {
     "type": "git",
@@ -42,7 +43,8 @@
     "url-loader": "^1.1.2",
     "webpack": "^4.29.3",
     "webpack-cli": "^3.2.3",
-    "webpack-dev-server": "^3.1.14"
+    "webpack-dev-server": "^3.1.14",
+    "snyk": "^1.143.1"
   },
   "browserslist": "> 0.25%, not dead"
 }
