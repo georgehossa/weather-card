@@ -1,10 +1,10 @@
-import "@babel/polyfill";
-import "./_scss/main.scss";
-//Import Weather Class
-const { Weather } = require("./js/weather");
-const { UI } = require("./js/ui");
-const { Store } = require("./js/store");
-//Instanciando Clases
+import '@babel/polyfill';
+import './_scss/main.scss';
+// Import Weather Class
+const { Weather } = require('./js/weather');
+const { UI } = require('./js/ui');
+const { Store } = require('./js/store');
+// Instanciando Clases
 const store = new Store();
 const { city, countryCode } = store.getLocationData();
 const weather = new Weather(city, countryCode);
@@ -14,7 +14,6 @@ async function fetchWeather() {
   const data = await weather.getWeather();
   ui.render(data);
   ui.renderImage(data);
-  console.log(data);
 }
 // Take input values
 const changeWeather = function(e) {
@@ -25,18 +24,18 @@ const changeWeather = function(e) {
   fetchWeather();
 };
 // Listen button events
-ui.button.addEventListener("click", changeWeather);
-ui.inputCountry.addEventListener("keyup", e => {
+ui.button.addEventListener('click', changeWeather);
+ui.inputCountry.addEventListener('keyup', e => {
   if (e.keyCode === 13) {
-    changeWeather();
     e.preventDefault();
+    changeWeather();
   }
 });
-ui.inputCity.addEventListener("keyup", e => {
+ui.inputCity.addEventListener('keyup', e => {
   if (e.keyCode === 13) {
-    changeWeather();
     e.preventDefault();
+    changeWeather();
   }
 });
 
-document.addEventListener("DOMContentLoaded", fetchWeather);
+document.addEventListener('DOMContentLoaded', fetchWeather);

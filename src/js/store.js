@@ -1,27 +1,29 @@
 export class Store {
-  constructor(){
+  constructor() {
     this.city;
     this.countryCode;
     this.defaultCity = 'Medellín';
     this.defaultCountry = 'co';
   }
-  getLocationData(){
-    if(localStorage.getItem('city') === null) {
+
+  getLocationData() {
+    if (localStorage.getItem('city') === null) {
       this.city = this.defaultCity;
-    }else{
+    } else {
       this.city = localStorage.getItem('city');
     }
-    if(localStorage.getItem('countryCode') === null){
+    if (localStorage.getItem('countryCode') === null) {
       this.countryCode = this.defaultCountry;
-    }else{
+    } else {
       this.countryCode = localStorage.getItem('countryCode');
     }
     return {
       city: this.city,
-      countryCode: this.countryCode
-    }
+      countryCode: this.countryCode,
+    };
   }
-  setLocationData(city, countryCode){
+
+  setLocationData(city, countryCode) {
     localStorage.setItem('city', city);
     localStorage.setItem('countryCode', countryCode);
   }
