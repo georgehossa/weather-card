@@ -1,0 +1,57 @@
+// MODULES
+
+//FORM
+.form {
+  max-width: 300px;
+  &__title {
+    color: $color__light;
+    font-size: 2rem;
+    margin: 0;
+    padding: 0;
+  }
+  &__description {
+    color: $color__light;
+    strong {
+      color: $color__secondary;
+    }
+    a {
+      color: $color__primary;
+      text-decoration: none;
+      font-size: inherit;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+    span {
+      font-size: 0.8rem;
+      font-weight: $font__light;
+    }
+  }
+}
+
+//CARD
+.card {
+  box-sizing: border-box;
+  &__image {
+    max-width: 100%;
+    width: 100%;
+  }
+}
+.data {
+  &__temp {
+    font-size: 3rem;
+    font-weight: $font__medium;
+    margin: 0;
+  }
+  &__description {
+    text-transform: capitalize;
+    font-size: 2rem;
+    font-weight: $font__light;
+    margin: 0;
+    border-bottom: 1px solid $color__dark--50;
+  }
+  &__city {
+    font-weight: $font__light;
+    letter-spacing: 1.5px;
+  }
+}

@@ -1,2 +1,2 @@
 # weather-card
-Simple Weather Card App
+This is a simple Weather Card App, here you can find the weather in eny city in the world.
