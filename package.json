@@ -35,7 +35,7 @@
     "imagemin": "^6.1.0",
     "img-loader": "^3.0.1",
     "mini-css-extract-plugin": "^0.5.0",
-    "node-sass": "^4.13.1",
+    "node-sass": "^7.0.0",
     "postcss-loader": "^3.0.0",
     "sass-loader": "^7.1.0",
     "snyk": "^1.165.0",
