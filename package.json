@@ -38,7 +38,7 @@
     "node-sass": "^4.13.1",
     "postcss-loader": "^3.0.0",
     "sass-loader": "^7.1.0",
-    "snyk": "^1.165.0",
+    "snyk": "^1.996.0",
     "style-loader": "^0.23.1",
     "svg-inline-loader": "^0.8.0",
     "svg-url-loader": "^2.3.2",
